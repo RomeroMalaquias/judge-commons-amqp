@@ -25,11 +25,14 @@ public abstract class ServerRPC extends Server {
                 System.out.println(" [x] Received " + message);
                 response = doWork(message);
                 AMQP.BasicProperties props = delivery.getProperties();
-                AMQP.BasicProperties replyProps = new AMQP.BasicProperties.Builder()
-                        .correlationId(props.getCorrelationId())
-                        .build();
-                System.out.println("Replying: " + response + " to:" + props.getReplyTo());
-                this.getExchange().getChannel().basicPublish( "", props.getReplyTo(), replyProps, response.getBytes("UTF-8"));
+                if (props != null && props.getReplyTo() != null) {
+                    AMQP.BasicProperties replyProps = new AMQP.BasicProperties.Builder()
+                            .correlationId(props.getCorrelationId())
+                            .build();
+                    System.out.println("Replying: " + response + " to:" + props.getReplyTo());
+                    this.getExchange().getChannel().basicPublish( "", props.getReplyTo(), replyProps, response.getBytes("UTF-8"));
+                }
+
                 this.getExchange().getChannel().basicAck(delivery.getEnvelope().getDeliveryTag(), false);
             }
         } catch (Exception e) {

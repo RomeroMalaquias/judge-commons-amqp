@@ -44,6 +44,10 @@ public abstract class Client {
         }
 
     }
+
+    public void close() {
+        exchange.closeConnection();
+    }
     public Exchange getExchange() {
         return exchange;
     }

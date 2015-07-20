@@ -1,8 +1,9 @@
-group 'com.thehuxley'
-version '1.0-SNAPSHOT'
+group 'br.ufal.ic'
+version '0.0.4'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.5
 

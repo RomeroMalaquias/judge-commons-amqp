@@ -11,6 +11,7 @@ public class Exchange extends ConnectionManager {
             e.printStackTrace();
         }
     }
+
     public String getName() {
         return exchangeName;
     }

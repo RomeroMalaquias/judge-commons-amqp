@@ -1,4 +1,4 @@
-package br.ufal.ic.commons;
+package br.ufal.ic.judge.commons;
 
 public class Exchange extends ConnectionManager {
     private String exchangeName;

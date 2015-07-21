@@ -1,4 +1,4 @@
-package br.ufal.ic.commons;
+package br.ufal.ic.judge.commons;
 import com.rabbitmq.client.Channel;
 
 public class Queue extends ConnectionManager {

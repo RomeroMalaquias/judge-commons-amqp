@@ -3,3 +3,7 @@
 build
 rabbitmq.iml
 *.iml
+
+gradle/
+gradlew
+gradlew.bat

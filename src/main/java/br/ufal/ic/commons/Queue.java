@@ -11,6 +11,16 @@ public class Queue extends ConnectionManager {
             e.printStackTrace();
         }
     }
+
+    public Queue(Channel channel, String queueName) {
+        this.queueName = queueName;
+        try {
+            channel.queueDeclare(this.queueName, true, false, false, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public Queue(String queueName) {
         this.createConnection();
         this.queueName = queueName;

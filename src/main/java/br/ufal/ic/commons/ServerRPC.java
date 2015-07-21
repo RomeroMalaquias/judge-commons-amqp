@@ -10,7 +10,7 @@ public abstract class ServerRPC extends Server {
 
     public ServerRPC(String exchangeName, String key) {
         super(exchangeName);
-        queue = new Queue(this.getExchange().getChannel());
+        queue = new Queue(this.getExchange().getChannel(), (key + "-queue"));
         this.getExchange().bindQueue(queue.getName(), key);
         String response;
 

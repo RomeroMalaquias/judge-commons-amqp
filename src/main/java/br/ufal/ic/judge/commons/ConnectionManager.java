@@ -1,4 +1,4 @@
-package br.ufal.ic.commons;
+package br.ufal.ic.judge.commons;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

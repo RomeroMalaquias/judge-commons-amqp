@@ -1,4 +1,4 @@
-package br.ufal.ic.commons;
+package br.ufal.ic.judge.commons;
 
 public class Server {
     private Exchange exchange;
